@@ -43,5 +43,12 @@ function deleteCheck(event) {
     if (item.classList[0] === 'delete-btn') {
     const todo = item.parentElement;
     todo.remove();
+    }   
+    
+    if (item.classList[0] === "done-btn") {
+        const todo = item.parentElement;
+        todo.classList.toggle('completed');
     }
 }
+
+
