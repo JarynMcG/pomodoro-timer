@@ -37,18 +37,22 @@ function addTodo(event) {
     todoInput.value = "";
 }
 
-function deleteCheck(event) {
-    const item = event.target;
+function deleteCheck(e) {
+    const item = e.target;
     // Delete item
-    if (item.classList[0] === 'delete-btn') {
-    const todo = item.parentElement;
-    todo.remove();
+    if (item.classList[0] === "delete-btn") {
+        const todo = item.parentElement;
+        // Animation
+        todo.classList.add("fall");
+        todo.addEventListener("transitionend", function(){
+            todo.remove();
+         });
     }   
     
     if (item.classList[0] === "done-btn") {
         const todo = item.parentElement;
         todo.classList.toggle('completed');
-    }
+        }
 }
 
 
